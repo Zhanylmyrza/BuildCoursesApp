@@ -18,7 +18,7 @@ CONTACTS=(
 )
 class Contact(models.Model):
   
- type = models.IntegerField(choices=contacts, default=1)
+ type = models.IntegerField(choices=CONTACTSS, default=1)
 
  
 class Course(models.Model):
