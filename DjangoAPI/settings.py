@@ -18,9 +18,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config("DEBUG", default=True, cast=bool)
-EMAIL_PORT = config("EMAIL_PORT", cast=int)
 
-DATABASES = {
+DATABASE = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": config("DB_NAME"),
