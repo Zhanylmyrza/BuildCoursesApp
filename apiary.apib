@@ -1,0 +1,183 @@
+FORMAT: 1A
+HOST: https://BuildCoursesApp.apiblueprint.org/
+
+# BuildCoursesApp
+
+I just implemented a simple *REST API* for **building courses** using [Django](https://docs.djangoproject.com/en/4.2/) and
+[Django Rest Framework](https://www.django-rest-framework.org/) with
+[PostgreSQL database](https://www.postgresql.org/) . 
+Used [Postman](https://www.postman.com/) to test all request
+
+**Note:** By the way, don't also forget to view the
+[Raw](https://raw.github.com/apiaryio/api-blueprint/master/examples/)
+code to see what is really going on in the ***API Blueprint***, as opposed to just
+seeing the output of the Github Markdown parser.
+
+## Built With
+* [Django](https://docs.djangoproject.com/en/4.2/) - A high-level Python web framework
+* [DRF](https://www.django-rest-framework.org/) - The rest framework used
+* [PostgreSQL](https://www.postgresql.org/) - Database
+
+
+
+## Getting Started
+
+These instructions will get you a copy of my project up and running on your 
+local machine for development and testing purposes.
+
+### Prerequisites
+
+First of all, you need to have one code editor. In my case, it is a 
+[**Visual Studio Code editor**](https://code.visualstudio.com/).
+Also, I recomend you to install 
+[Django](https://docs.djangoproject.com/en/4.2/),
+[Postman](https://www.postman.com/),
+[PostgreSQL](https://www.postgresql.org/) on your laptop, 
+if you want to do everything as same as mine.
+Actually, the django project connected with database colled **SQLite** by default. 
+You can keep it, as it was. 
+For that case, I recommend you to install
+[SQLiteStudio(3.4.3)](https://sqlitestudio.pl/).
+As saying goes, the *Postman* also just for testing...
+```
+
+On commend prompt of your project or straight away in the terminal of your project write:
+
+py -m pip istall Django
+
+but, as in my project everything installed already
+you just need to download my project
+by clicking on the green button in the right corner
+
+```
+
+### Let's start
+
+After downloding my project, write in terminal: 
+
+```
+
+python manage.py runserver
+
+```
+And enjoy the process of coding and learning :D
+
+#### Author
+
+* **Zhanylmyrza Bakirova** - *Initial work* - [BuildCoursesApp](https://github.com/Zhanylmyrza/BuildCoursesApp)
+
+
+## Courses Collection [/course]
+
+### List All Courses [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 3,
+                "name": "METRDOTEL",
+                "description": "The goal of the program is comprehensive maitre training. This training program was developed specifically for our Culinary Arts School by leading experts.",
+                "logo": "static/img/logo3.pmg",
+                "category": 2
+            },
+            {
+                "id": 6,
+                "name": "THE PASTRY DESIGNER",
+                "description": "The aim of the course is a comprehensive basic professional training of pastry chefs for catering companies of various levels.",
+                "logo": "static/img/logo6.pmg",
+                "category": 2
+            },
+            {
+                "id": 2,
+                "name": "Java",
+                "description": "Java is the hardest programming language ",
+                "logo": "static/img/logo2.pmg",
+                "category": 4
+            },
+            {
+                "id": 1,
+                "name": "Python",
+                "description": "Python is the easiest programming language",
+                "logo": "static/img/logo1.pmg",
+                "category": 4
+            },
+            {
+                "id": 7,
+                "name": "Driving Motorcycle ",
+                "description": "a combination of exhilaration, fear, relaxation, and pleasure that changes you forever. It is physical & emotional pleasure, with a layer of anxiety & adrenaline.",
+                "logo": "static/img/logo7.pmg",
+                "category": 3
+            },
+            {
+                "id": 8,
+                "name": "Driving Shipp ",
+                "description": "As we pointed out, using a steering wheel on a boat is very similar to using a steering wheel in an automobile. You turn the wheel, and the boat follows—mostly. ",
+                "logo": "static/img/logo8.pmg",
+                "category": 3
+            },
+            {
+                "id": 9,
+                "name": "REACT NATIVE",
+                "description": "For front-end developers neede language",
+                "logo": "static/img/logo7.pmg",
+                "category": 4
+            },
+            {
+                "id": 10,
+                "name": "IX/UI",
+                "description": "Just for testing",
+                "logo": "static/img/logo10.pmg",
+                "category": 4
+            }
+    ]
+
+### Create a New Course [POST]
+
+You may create your own course using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "For which category depends your a new course?",
+            "choices": [
+                "Cooking",
+                "Driving",
+                "Languages",
+                "IT"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/1
+
+    + Body
+
+            {
+                "question": "For which category depends your a new course?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Cooking",
+                        "votes": 0
+                    }, {
+                        "choice": "Driving",
+                        "votes": 0
+                    }, {
+                        "choice": "Languages",
+                        "votes": 0
+                    }, {
+                        "choice": "IT",
+                        "votes": 0
+                    }
+                ]
+            }
+
+### Delete Courses [DELETE]
+
++ Response 204
