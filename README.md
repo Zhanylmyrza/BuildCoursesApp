@@ -1,6 +1,9 @@
 # BuildCoursesApp
+
+to see the raw open the apiary.apib file
+
 Link for documentation:
-https://github.com/Zhanylmyrza/BuildCoursesApp/blob/main/apiary.apib
+https://app.apiary.io/buildcoursesapp/editor
 
 ![image](https://user-images.githubusercontent.com/93324684/232335979-108ba922-c9d6-4e5d-8403-386927fceda0.png)
 ![image](https://user-images.githubusercontent.com/93324684/232739216-04047b6f-e7e3-4581-b267-becc723ebe44.png)
